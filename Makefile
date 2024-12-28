@@ -45,7 +45,8 @@ TOOLS = sunxi-fexc sunxi-bootinfo sunxi-fel sunxi-nand-part sunxi-pio
 FEXC_LINKS = bin2fex fex2bin
 
 # Tools which are only useful on the target
-TARGET_TOOLS = sunxi-meminfo
+#TARGET_TOOLS = sunxi-meminfo
+TARGET_TOOLS = sunxi-meminfo sunxi-fexc sunxi-bootinfo sunxi-fel sunxi-nand-part sunxi-pio
 
 # Misc tools (of more "exotic" nature) not part of our default build / install
 MISC_TOOLS = phoenix_info sunxi-nand-image-builder
@@ -61,7 +62,7 @@ CROSS_DEFAULT := arm-none-eabi-
 CROSS_COMPILE ?= $(or $(shell ./find-arm-gcc.sh),$(CROSS_DEFAULT))
 CROSS_CC := $(CROSS_COMPILE)gcc
 
-DESTDIR ?=
+DESTDIR ?= /home/admyn/BPI-M2/ARM_sunxi-tools
 PREFIX  ?= /usr/local
 BINDIR  ?= $(PREFIX)/bin
 MANDIR  ?= $(PREFIX)/share/man/man1
